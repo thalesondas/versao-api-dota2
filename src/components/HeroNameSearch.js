@@ -1,6 +1,29 @@
-import { ToggleButton, Form, Button } from 'react-bootstrap';
+import { useContext, useEffect } from 'react';
+import { ToggleButton, Form, Button, Alert } from 'react-bootstrap';
+import { DataContext } from '../context/DataContext';
+import '../assets/HeroNameSearch.css'
 
 const HeroNameSearch = () => {
+
+    const { 
+        isHeroChecked, 
+        isHeroSearchDisabled, 
+        isHeroButtonDisabled, 
+        handleHeroChecked, 
+        handleInputKeyPress, 
+        inputSearch,
+        setInputSearch,
+        fetchData, 
+        error, 
+        nameInputRef 
+    } = useContext(DataContext);
+
+    useEffect(() => {
+        if(!isHeroSearchDisabled){
+            nameInputRef.current.focus();
+        }
+    }, [isHeroSearchDisabled]);
+
     return (
         <>
             <Form className='mt-4'>
@@ -10,6 +33,9 @@ const HeroNameSearch = () => {
                         size='lg'
                         type="checkbox"
                         variant="outline-danger"
+                        checked={isHeroChecked}
+                        value="1"
+                        onChange={handleHeroChecked}
                     >
                         Escolher por herói
                     </ToggleButton>
@@ -18,8 +44,14 @@ const HeroNameSearch = () => {
                         size='lg'
                         className='mt-3'
                         placeholder='Escolha o nome do herói'
+                        value={inputSearch}
+                        onChange={(e) => setInputSearch(e.target.value)}
+                        onKeyDown={handleInputKeyPress}
+                        ref={nameInputRef}
+                        disabled={isHeroSearchDisabled}
                     />
                     <Button variant='danger' size='lg' className='mt-4'>Pesquisar</Button>
+                    {error && <Alert className='mt-4 alert-sm' variant="danger">{error}</Alert>}
                 </Form.Group>
             </Form>
         </>
