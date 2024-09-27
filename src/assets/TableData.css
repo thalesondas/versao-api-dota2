@@ -1,3 +1,20 @@
 td{
     vertical-align: middle;
-  }
+}
+
+.pagination .active{
+    --bs-pagination-active-bg: #672023;
+}
+
+.pagination .disabled{
+    --bs-pagination-disabled-bg: #959393;
+}
+
+.pagination li a{
+    background-color: #982E32;
+    color: white;
+}
+
+.pagination li a:hover {
+  color: #982E32;
+}
