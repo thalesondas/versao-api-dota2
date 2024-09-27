@@ -1,13 +1,11 @@
 import '../assets/Footer.css'
 
-function Footer() {
-
+const Footer = () => {
     return(
         <footer>
             DOTA 2 API™
         </footer>
     )
-
 }
 
 export default Footer;

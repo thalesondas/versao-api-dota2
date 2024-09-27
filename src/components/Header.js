@@ -1,8 +1,7 @@
 import { Container, Image, Row, Col } from 'react-bootstrap'
 import '../assets/Header.css'
 
-function Header() {
-
+const Header = () => {
     return(
         <header>
             <Container>
@@ -20,7 +19,6 @@ function Header() {
             </Container>
         </header>
     )
-
 }
 
 export default Header;
