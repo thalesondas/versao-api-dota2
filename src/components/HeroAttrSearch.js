@@ -3,7 +3,7 @@ import { Form, ToggleButton, Button } from 'react-bootstrap';
 import { DataContext } from '../context/DataContext';
 
 const HeroAttrSearch = () => {
-
+    
     const { 
         isAttrChecked, 
         isAttrSearchDisabled, 

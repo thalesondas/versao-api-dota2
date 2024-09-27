@@ -1,12 +1,23 @@
 import { useContext } from 'react';
-import { Table, Image } from 'react-bootstrap';
+import { Table, Image, Pagination } from 'react-bootstrap';
 import { DataContext } from '../context/DataContext';
 import '../assets/TableData.css'
 
 const TableData = () => {
     const { 
-        data
+        data,
+        paginate,
+        currentPage,
+        itemsPerPage,
+        currentItems
     } = useContext(DataContext);
+
+    let items = [];
+    for (let number = 1; number <= Math.ceil(data.length / itemsPerPage); number++) {
+        items.push(
+            <Pagination.Item onClick={() => paginate(number)} key={number} active={number === currentPage}>{number}</Pagination.Item>,
+        );
+    }
 
     return (
         <>
@@ -20,7 +31,7 @@ const TableData = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {data.map(item => (
+                    {currentItems.map(item => (
                         <tr key={item.id}>
                             <td> <Image src={'https://api.opendota.com' + item.img} alt='localized_name' thumbnail /> </td>
                             <td>{item.localized_name}</td>
@@ -30,6 +41,13 @@ const TableData = () => {
                     ))}
                 </tbody>
             </Table>
+            <Pagination>
+                <Pagination.First onClick={() => paginate(1)} disabled={currentPage === 1}/>
+                <Pagination.Prev onClick={() => paginate(currentPage - 1)} disabled={currentPage === 1} />
+                {items}
+                <Pagination.Next onClick={() => paginate(currentPage + 1)} disabled={currentPage === Math.ceil(data.length / itemsPerPage)} />
+                <Pagination.Last onClick={() => paginate(Math.ceil(data.length / itemsPerPage))} disabled={currentPage === Math.ceil(data.length / itemsPerPage)} />
+            </Pagination>
         </>
     );
 }

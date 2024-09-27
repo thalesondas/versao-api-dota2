@@ -8,7 +8,8 @@ import '../assets/Main.css'
 
 const Main = () => {
 
-    const { setData,
+    const {
+        setData,
         setOriginalData,
         nameInputRef
     } = useContext(DataContext);

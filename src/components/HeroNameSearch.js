@@ -4,7 +4,6 @@ import { DataContext } from '../context/DataContext';
 import '../assets/HeroNameSearch.css'
 
 const HeroNameSearch = () => {
-
     const { 
         isHeroChecked, 
         isHeroSearchDisabled, 
@@ -50,7 +49,7 @@ const HeroNameSearch = () => {
                         ref={nameInputRef}
                         disabled={isHeroSearchDisabled}
                     />
-                    <Button variant='danger' size='lg' className='mt-4'>Pesquisar</Button>
+                    <Button variant='danger' size='lg' className='mt-4' onClick={fetchData} disabled={isHeroButtonDisabled}>Pesquisar</Button>
                     {error && <Alert className='mt-4 alert-sm' variant="danger">{error}</Alert>}
                 </Form.Group>
             </Form>

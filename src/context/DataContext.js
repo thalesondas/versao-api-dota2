@@ -20,6 +20,16 @@ export const DataProvider = ({ children }) => {
     const [isAttrChecked, setIsAttrChecked] = useState(false);
     const [isAttrSearchDisabled, setIsAttrSearchDisabled] = useState(true);
     const [isAttrButtonDisabled, setIsAttrButtonDisabled] = useState(true);
+
+    // Bloco para paginação
+    const [currentPage, setCurrentPage] = useState(1);
+    const itemsPerPage = 10;
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+    const paginate = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    }
   
     const handleInputKeyPress = (e) => {
       if (e.key === 'Enter') {
@@ -107,6 +117,10 @@ export const DataProvider = ({ children }) => {
         inputSearch,
         data,
         error,
+        paginate,
+        currentPage,
+        itemsPerPage,
+        currentItems,
         nameInputRef,
         attrInputRef }}>
       {children}
