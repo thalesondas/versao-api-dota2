@@ -33,7 +33,7 @@ const TableData = () => {
                 <tbody>
                     {currentItems.map(item => (
                         <tr key={item.id}>
-                            <td> <Image src={'https://api.opendota.com' + item.img} alt='localized_name' thumbnail /> </td>
+                            <td> <Image src={'https://cdn.akamai.steamstatic.com/' + item.img} alt='localized_name' thumbnail /> </td>
                             <td>{item.localized_name}</td>
                             <td>{item.primary_attr}</td>
                             <td>{item.attack_type}</td>
