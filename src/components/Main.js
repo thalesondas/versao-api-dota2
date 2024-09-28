@@ -28,16 +28,13 @@ const Main = () => {
     }, []);
 
     return (
-        <main className="App-header">
+        <main className="App-header pt-3">
             <Container>
-                <Row>
-                    <Col>
+                <Row className="justify-content-between">
+                    <Col className='px-5'>
                         <HeroNameSearch />
                     </Col>
-                    <Col>
-                        <div></div>
-                    </Col>
-                    <Col>
+                    <Col className='px-5'>
                         <HeroAttrSearch />
                     </Col>
                 </Row>

@@ -25,7 +25,7 @@ const HeroNameSearch = () => {
 
     return (
         <>
-            <Form className='mt-4'>
+            <Form className='mt-4 d-flex justify-content-center'>
                 <Form.Group>
                     <ToggleButton
                         id="toggle-check-hero"
