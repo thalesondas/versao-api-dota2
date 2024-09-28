@@ -2,6 +2,10 @@ td{
     vertical-align: middle;
 }
 
+.custom-width{
+    width: 200px;
+}
+
 .pagination .active{
     --bs-pagination-active-bg: #672023;
 }

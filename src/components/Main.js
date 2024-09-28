@@ -28,7 +28,7 @@ const Main = () => {
     }, []);
 
     return (
-        <main className="App-header pt-3">
+        <main className="pt-3">
             <Container>
                 <Row className="justify-content-between">
                     <Col className='px-5'>

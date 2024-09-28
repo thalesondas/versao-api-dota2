@@ -29,7 +29,6 @@ const HeroNameSearch = () => {
                 <Form.Group>
                     <ToggleButton
                         id="toggle-check-hero"
-                        size='lg'
                         type="checkbox"
                         variant="outline-danger"
                         checked={isHeroChecked}
@@ -40,7 +39,6 @@ const HeroNameSearch = () => {
                     </ToggleButton>
                     <Form.Control
                         type='text'
-                        size='lg'
                         className='mt-3'
                         placeholder='Escolha o nome do herói'
                         value={inputSearch}
@@ -49,7 +47,7 @@ const HeroNameSearch = () => {
                         ref={nameInputRef}
                         disabled={isHeroSearchDisabled}
                     />
-                    <Button variant='danger' size='lg' className='mt-4' onClick={fetchData} disabled={isHeroButtonDisabled}>Pesquisar</Button>
+                    <Button variant='danger' className='mt-3' onClick={fetchData} disabled={isHeroButtonDisabled}>Pesquisar</Button>
                     {error && <Alert className='mt-4 alert-sm' variant="danger">{error}</Alert>}
                 </Form.Group>
             </Form>

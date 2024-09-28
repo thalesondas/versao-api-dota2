@@ -20,7 +20,7 @@ const TableData = () => {
     }
 
     return (
-        <Container fluid className='d-flex flex-column align-items-center'>
+        <Container fluid className='px-4 d-flex flex-column align-items-center'>
             <Table variant='dark' className='mt-5' striped bordered hover>
                 <thead>
                     <tr>
@@ -33,7 +33,7 @@ const TableData = () => {
                 <tbody>
                     {currentItems.map(item => (
                         <tr key={item.id}>
-                            <td className='py-3'> <Image src={'https://cdn.akamai.steamstatic.com/' + item.img} alt='localized_name' thumbnail /> </td>
+                            <td className='py-3'> <Image src={'https://cdn.akamai.steamstatic.com/' + item.img} alt='localized_name' thumbnail className='custom-width' /> </td>
                             <td>{item.localized_name}</td>
                             <td>{item.primary_attr}</td>
                             <td>{item.attack_type}</td>
