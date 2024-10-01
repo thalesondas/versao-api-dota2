@@ -21,7 +21,7 @@ const HeroNameSearch = () => {
         if(!isHeroSearchDisabled){
             nameInputRef.current.focus();
         }
-    }, [isHeroSearchDisabled]);
+    }, [isHeroSearchDisabled, nameInputRef]);
 
     return (
         <>

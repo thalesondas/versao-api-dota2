@@ -18,7 +18,7 @@ const HeroAttrSearch = () => {
         if(!isAttrSearchDisabled){
             attrInputRef.current.focus();
         }
-    }, [isAttrSearchDisabled]);
+    }, [isAttrSearchDisabled, attrInputRef]);
 
     return (
         <>

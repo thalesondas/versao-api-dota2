@@ -25,7 +25,7 @@ const Main = () => {
         .catch((err) => {
             console.log('Error: ', err);
         });
-    }, []);
+    }, [nameInputRef, setData, setOriginalData]);
 
     return (
         <main className="pt-3">
